@@ -1,0 +1,24 @@
+html *{
+ box-sizing: border-box;
+}
+main {
+  width: 500px;
+  margin: 0 auto;
+  background-color: gray;
+}
+.slider{
+  width:500px;
+}
+.slider-content {
+}
+.slider-content ul {
+  padding:0;
+  width: 5000px;
+}
+.slider-content ul li{
+  list-style: none;
+  width:500px;
+  float:left;
+  height: 200px;
+  border:1px solid yellow;
+}

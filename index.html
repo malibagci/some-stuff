@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>Page Title</title>
+  <link rel="stylesheet" href="app.css">
+  <meta charset="utf-8">
+</head>
+<body ng-controller="mainCtrl as main">
+  <main>
+    <section>
+      <h1 ng-bind="::main.appName"></h1>
+      <div class="slider">
+        <div my-slider ng-model = "main.images">
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="factory.js"></script>
+  <script type="text/javascript" src="slider.js"></script>
+</body>
+</html>
+
+<script type="text/ng-template" id="slider.tpl.html">
+
+<div class="slider-content">
+  <div>
+  <a  href class="previous" ng-click="previous()">Previous</a>
+  <a href class="next" ng-click="next()">Next</a>
+  </div>
+  <ul>
+      <li ng-repeat = "image in sliderVm.images">
+        <span> {{image.title}}</span>
+      </li>
+  </ul>
+  </div>
+
+</script>
