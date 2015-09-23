@@ -27,12 +27,12 @@
 
 <div class="slider-content">
   <div>
-  <a  href class="previous" ng-click="previous()">Previous</a>
-  <a href class="next" ng-click="next()">Next</a>
+  <a  href class="previous" ng-click="sliderVm.previous()">Previous</a>
+  <a href class="next" ng-click="sliderVm.next()">Next</a>
   </div>
   <ul>
-      <li ng-repeat = "image in sliderVm.images">
-        <span> {{image.title}}</span>
+      <li ng-init= "sliderVm.init(image,$index)" ng-show="image.isActive" ng-repeat = "image in sliderVm.images">
+      <img ng-src = "{{image.imageSrc}}" alt="{{image.title}}" />
       </li>
   </ul>
   </div>

@@ -22,3 +22,14 @@ main {
   height: 200px;
   border:1px solid yellow;
 }
+.slider-content ul li img{
+  width:100%;
+}
+.animate-hide {
+  transition: all linear 0.5s;
+  line-height: 20px;
+  opacity: 1;
+  padding: 10px;
+  border: 1px solid black;
+  background: white;
+}

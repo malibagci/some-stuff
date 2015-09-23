@@ -7,8 +7,17 @@
     vm.images = [];
 
     flickrService.getImages().success(function(result) {
-      vm.images = result.query.results.photo;
+  prepareImages(result.query.results.photo);
       console.log(vm.images)
     });
+
+    function prepareImages(images){
+      angular.forEach(images,function(photo){
+        vm.images.push({
+          imageSrc:"https://farm"+photo.farm+".staticflickr.com/"+photo.server+"/"+photo.id+"_"+photo.secret+"_n.jpg",
+          title:photo.title
+        })
+      })
+    }
   }
 })(angular.module('myApp',[]));
